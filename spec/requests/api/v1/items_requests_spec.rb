@@ -57,7 +57,6 @@ RSpec.describe "Item endpoints", type: :request do
   end
 
   it "can create new items" do 
- 
     attributes = {
       name: "chocolate bar",
       description: "sweet and delicious",
@@ -77,7 +76,6 @@ RSpec.describe "Item endpoints", type: :request do
 
     expect(response).to have_http_status(200)
     expect(item_new[:data][:attributes][:name]).to eq("chocolate bar")
-    
   end
   
   it "can retrieve a single item by id" do
@@ -262,7 +260,6 @@ RSpec.describe "Item endpoints", type: :request do
     end
   end
 
-
   describe "POST /api/v1/items", type: :request do
     it "returns a 400 error with bad request response" do
 
@@ -335,6 +332,7 @@ RSpec.describe "Item endpoints", type: :request do
       expect(response).to have_http_status(200)
     end
   end
+
   describe "can't delete same item twice" do
     it "can not delete same item twice" do
 
@@ -344,6 +342,4 @@ RSpec.describe "Item endpoints", type: :request do
     expect(response).to have_http_status(:not_found)
     end
   end
-
-
 end

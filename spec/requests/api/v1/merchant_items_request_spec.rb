@@ -17,7 +17,7 @@ RSpec.describe "Item_merchants", type: :request do
         get "/api/v1/merchants/#{id}/items"
 
         items = JSON.parse(response.body, symbolize_names: true)
-        #binding.pry
+  
         expect(response.status).to eq(200)
         expect(items[:data].count).to eq(2)
         expect(items[:data][0][:id]).to eq(@item_2.id.to_s)

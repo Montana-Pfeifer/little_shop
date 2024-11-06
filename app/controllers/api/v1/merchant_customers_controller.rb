@@ -1,16 +1,12 @@
 class Api::V1::MerchantCustomersController < ApplicationController
-    before_action :validate_merchant, only: [:index]
+before_action :validate_merchant, only: [:index]
 
     def index
         customers = Customer.show_all_customers(params[:id])
         render json: CustomerSerializer.new(customers)
     end
 
-
-
-
     private
-
 
     def validate_merchant
         merchant = Merchant.find_by(id: params[:id])

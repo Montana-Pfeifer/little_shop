@@ -32,7 +32,6 @@ RSpec.describe Customer, type: :model do
 
       expect(customer1).to contain_exactly(customer_1)
       expect(customer31).to contain_exactly(customer_1, customer_3)
-
     end
   end
 end

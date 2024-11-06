@@ -40,7 +40,6 @@ RSpec.describe "Merchants endpoints", type: :request do
     merchants = Merchant.all
     expect(merchants.count).to eq(3)
     
-    
     delete "/api/v1/merchants/#{@merchant_2.id}"
 
     expect(response).to be_successful 
@@ -67,7 +66,6 @@ RSpec.describe "Merchants endpoints", type: :request do
     expect(response).to have_http_status(200)
     expect(merchant_new[:data][:attributes][:name]).to eq("the chocolate bar guy")
     expect(all_merchants[:data]).to include(id)
-
   end
   
   it "can retrieve a single merchant by id" do
@@ -241,7 +239,6 @@ RSpec.describe "Merchants endpoints", type: :request do
       expect(merchant).to be_an(Hash)
       expect(merchant[:data]).to eq({})
       expect(merchant).to eq({:data=>{}})
-    
     end
 
     it 'returns an error when name is not provided' do
@@ -251,7 +248,6 @@ RSpec.describe "Merchants endpoints", type: :request do
 
       expect(response).to have_http_status(:bad_request)
       expect(merchant[:errors][0][:status]).to eq("400")
-      
     end
   end
 
