@@ -21,8 +21,14 @@ before_action :validate_name_param, only: [:find_one]
     end
 
     def destroy
-        Merchant.find(params[:id]).destroy
-    end
+        merchant = Merchant.find_by(id: params[:id])
+        if merchant
+          merchant.destroy
+          render json: { message: 'Merchant successfully deleted' }, status: :ok
+        else
+          render json: { error: 'Merchant not found' }, status: :not_found
+        end
+      end
    
     def create
         merchant =  Merchant.create!(merchant_params)
