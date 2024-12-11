@@ -31,7 +31,7 @@ In this group project, Little Shop, our team worked on building an E-Commerce ap
 Terra Manning https://github.com/TDManning
 Montana Pfeifer https://github.com/Montana-Pfeifer
 Paul Knapp https://github.com/Paul-Knapp
-Devlin Lynch https://github.com/devklynch Test Test
+Devlin Lynch https://github.com/devklynch Test Test Test
 Oscar Patterson https://github.com/ossar3
 
 <img src="Little_Shop.png" alt="Alt text" width="800" height="auto">
